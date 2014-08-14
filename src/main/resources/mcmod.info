@@ -1,14 +1,14 @@
 [
 {
-  "modid": "NFWRIGHTRR",
-  "name": "Wright's Record Recipes",
-  "description": "Created by NFWright for the Minecraft Community. This mod contains crafting recipes for all of the Records.",
-  "version": "0.2",
+  "modid": "wenis",
+  "name": "",
+  "description": "Created by NFWright for the Minecraft Community. This mod contains "Super" items. Energy and matter can be used for furnaces and tools, respectively.",
+  "version": "0.1",
   "mcversion": "1.7.10",
-  "url": "nfwright.webs.com",
+  "url": "wrightcraft.webs.com",
   "updateUrl": "",
   "authorList": ["NFWright"],
-  "credits": "NFWright",
+  "credits": "NFWright, Hussy16",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
