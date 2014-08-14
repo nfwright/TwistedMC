@@ -1,16 +1,25 @@
-[
 {
-  "modid": "wenis",
-  "name": "",
-  "description": "Created by NFWright for the Minecraft Community. This mod contains "Super" items. Energy and matter can be used for furnaces and tools, respectively.",
-  "version": "0.1",
-  "mcversion": "1.7.10",
-  "url": "wrightcraft.webs.com",
-  "updateUrl": "",
-  "authorList": ["NFWright"],
-  "credits": "NFWright, Hussy16",
-  "logoFile": "",
-  "screenshots": [],
-  "dependencies": []
+  	"modListVersion": 2,
+  	"modList": [
+  			{
+  				"modid": "twistedmc",
+  				"name": "Twisted Minecraft",
+  				"description": "",
+  				"mcversion": "${mcversion}",
+  				"version": "${version}",
+  				"authorList": [
+  						"NFWright", "shinoow"
+  				],
+  				"credits": "",
+  				"dependants": [  ],
+				"dependencies": [  ],
+				"parent": "",
+				"requiredMods": [  ],
+				"logoFile": "",
+				"screenshots": [  ],
+				"updateUrl": "",
+  				"url": "https://github.com/nfwright/TwistedMC",
+ 				"useDependencyInformation": true
+			}
+	]
 }
-]

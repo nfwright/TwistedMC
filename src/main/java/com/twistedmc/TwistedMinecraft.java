@@ -2,6 +2,7 @@ package com.twistedmc;
 
 import com.twistedmc.common.CommonProxy;
 import com.twistedmc.common.handlers.RecipeHandler;
+import com.twistedmc.common.lib.CraftingRecipes;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
@@ -23,6 +24,7 @@ public class TwistedMinecraft {
 	public void preInit(FMLPreInitializationEvent event){
 		proxy.preInit();
 		RecipeHandler.init();
+		CraftingRecipes.registerRecipes();
 	}
 
 	public void init(FMLInitializationEvent event){
