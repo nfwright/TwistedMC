@@ -1,0 +1,11 @@
+package com.example.wenis;
+
+public class RegisterHelper{
+
+	public void registerBlock (Block, block){
+		
+		GameRegistry.registerBlock(block, Wenis.MODID + " " + block.getUnlocalizedName().substring(5));
+		
+	}
+	
+}

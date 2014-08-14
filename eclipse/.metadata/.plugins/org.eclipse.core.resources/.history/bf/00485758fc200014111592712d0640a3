@@ -1,0 +1,14 @@
+package com.example.wenis;
+
+import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.block.Block;
+
+public class RegisterHelper{
+
+	public void registerBlock (Block block){
+		
+		GameRegistry.registerBlock(block, Wenis.MODID + "_" + block.getUnlocalizedName().substring(5));
+		
+	}
+	
+}

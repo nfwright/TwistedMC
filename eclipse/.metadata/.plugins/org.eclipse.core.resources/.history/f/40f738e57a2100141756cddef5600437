@@ -1,0 +1,14 @@
+package com.example.wenis;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+
+public class CosmicGlass extends Block{
+
+	public CosmicGlass(){
+		super(Material.glass);
+		setBlockName("CosmicGlass");
+		setBlockTextureName("wenis:CosmicGlass");
+		setHardness(5f);
+	}
+}

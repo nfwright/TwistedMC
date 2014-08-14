@@ -1,0 +1,14 @@
+package com.example.wenis;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+
+public class BlockCompCobble extends Block{
+
+	public BlockCompCobble(){
+		super(Material.rock);
+		setBlockName("compCobble");
+		setBlockTextureName("wenis:compCobble");
+		setHardness(5f);
+	}
+}

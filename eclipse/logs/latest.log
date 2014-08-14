@@ -1,0 +1,33 @@
+[16:27:48] [main/INFO]: Setting user: ForgeDevName
+[16:27:51] [Client thread/INFO]: LWJGL Version: 2.9.1
+[16:28:00] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:wenis
+[16:28:01] [Sound Library Loader/INFO]: Sound engine started
+[16:28:05] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[16:28:06] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[16:28:06] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:wenis
+[16:28:06] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[16:28:07] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[16:28:08] [Sound Library Loader/INFO]: Sound engine started
+[16:28:15] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[16:28:15] [Server thread/INFO]: Generating keypair
+[16:28:17] [Server thread/INFO]: Preparing start region for level 0
+[16:28:18] [Server thread/INFO]: Preparing spawn area: 15%
+[16:28:19] [Server thread/INFO]: Preparing spawn area: 76%
+[16:28:20] [Server thread/INFO]: Changing view distance to 2, from 10
+[16:28:20] [Server thread/INFO]: ForgeDevName[local:E:ed7664e4] logged in with entity id 391 at (-106.4335697401109, 101.0, 192.8301833797582)
+[16:28:21] [Server thread/INFO]: ForgeDevName joined the game
+[16:28:40] [Server thread/INFO]: Saving and pausing game...
+[16:28:40] [Server thread/INFO]: Saving chunks for level 'pen 15 yeo'/Overworld
+[16:28:40] [Server thread/INFO]: Saving chunks for level 'pen 15 yeo'/Nether
+[16:28:40] [Server thread/INFO]: Saving chunks for level 'pen 15 yeo'/The End
+[16:28:43] [Server thread/INFO]: Saving and pausing game...
+[16:28:43] [Server thread/INFO]: Saving chunks for level 'pen 15 yeo'/Overworld
+[16:28:43] [Server thread/INFO]: Saving chunks for level 'pen 15 yeo'/Nether
+[16:28:43] [Server thread/INFO]: Saving chunks for level 'pen 15 yeo'/The End
+[16:28:43] [Server thread/INFO]: Stopping server
+[16:28:43] [Server thread/INFO]: Saving players
+[16:28:43] [Server thread/INFO]: Saving worlds
+[16:28:43] [Server thread/INFO]: Saving chunks for level 'pen 15 yeo'/Overworld
+[16:28:44] [Server thread/INFO]: Saving chunks for level 'pen 15 yeo'/Nether
+[16:28:44] [Server thread/INFO]: Saving chunks for level 'pen 15 yeo'/The End
+[16:28:52] [Client thread/INFO]: Stopping!

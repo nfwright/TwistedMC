@@ -1,0 +1,13 @@
+package com.example.wenis.gui;
+
+import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.inventory.Container;
+
+public class Guiprocessor extends GuiContainer{
+
+	public Guiprocessor(Container p_i1072_1_) {
+		super(p_i1072_1_);
+		// TODO Auto-generated constructor stub
+	}
+
+}

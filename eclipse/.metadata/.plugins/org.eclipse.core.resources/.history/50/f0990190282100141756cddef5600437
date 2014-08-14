@@ -1,0 +1,50 @@
+package com.example.wenis;
+
+import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
+
+@Mod(modid = Wenis.MODID, version = Wenis.VERSION)
+public class Wenis
+{
+	
+	public static CreativeTabs Compressed;
+	
+    public static final String MODID = "wenis";
+    public static final String VERSION = "0.1";
+    
+    public static Block crate;
+    public static Block compCobble;
+    public static Block compHay;
+    
+    @EventHandler
+    public void preInit(FMLPreInitializationEvent event)
+    {
+    	crate = new BlockCrate().setBlockName("crate").setCreativeTab(Wenis.Compressed);
+    	compCobble = new BlockCompCobble().setBlockName("compCobble").setCreativeTab(CreativeTabs.tabBlock);
+    	compHay = new BlockCompHay().setBlockName("compHay").setCreativeTab(CreativeTabs.tabBlock);
+    	RegisterHelper.registerBlock(compHay);
+    	RegisterHelper.registerBlock(compCobble);
+    	
+    	GameRegistry.addRecipe(new ItemStack(Wenis.compCobble), new Object[]{
+            "AAA",
+            "AAA",
+            "AAA",
+            'A', Blocks.cobblestone
+    });
+    	
+    	GameRegistry.addRecipe(new ItemStack(Wenis.compHay), new Object[]{
+            "AAA",
+            "AAA",
+            "AAA",
+            'A', Blocks.hay_block
+    });
+   	
+    }
+}

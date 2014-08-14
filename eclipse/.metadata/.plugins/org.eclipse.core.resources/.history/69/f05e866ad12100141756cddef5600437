@@ -1,0 +1,191 @@
+package com.example.wenis;
+
+import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.util.EnumHelper;
+
+import com.example.wenis.blocks.processor;
+import com.example.wenis.tileentity.TileEntityprocessor;
+
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
+@Mod(modid = Wenis.MODID, version = Wenis.VERSION)
+public class Wenis
+{	
+	
+	/** 
+	*Todo
+	*
+	*Photon Saber
+	*
+	*Neutrino Bow
+	*
+	*Dark Energy = Furnace Fuel
+	*
+	*Dark Matter = Tools?
+	*
+	*(figure out a machine)
+	*/
+	
+	//Prelude to the masterpiece
+    public static final String MODID = "wenis";
+    public static final String VERSION = "0.2";
+    
+    @Instance(MODID)
+    public static Wenis instance;
+    
+    //CreativeTabs
+    public static CreativeTabs Infinidark = new CreativeTabs("Infinidark"){
+		@Override
+		@SideOnly(Side.CLIENT)
+		public Item getTabIconItem() {
+			return Items.diamond_hoe;
+		}
+    };
+    
+    //Tool Types
+    public static ToolMaterial DM = EnumHelper.addToolMaterial("DM", 3, 3001, 10f, 7f, 29);
+    
+    //Tools 
+    public static Item DMSword;
+    
+    //items
+    public static Item DarkMatter;
+    public static Item DarkEnergy;
+    public static Item InfinityMatter;
+    public static Item InfinityEnergy;
+    public static Item SemistableIsotope;
+    public static Item SemistableEnergy;
+    public static Item UnstableIsotope;
+    public static Item UnstableEnergy;
+    public static Item MatterJar;
+    
+    public static Item ArchaicStone;
+    
+    //blocks
+    public static Block CosmicGlass;
+    
+    //machine
+    public static Block processor;
+    public static Block processorIdle;
+    public static final int guiIDprocessor = 0;
+    
+    @EventHandler
+
+    public void preInit(FMLPreInitializationEvent event)
+    {
+    	
+    	//Define Blocks
+    	CosmicGlass = new com.example.wenis.blocks.CosmicGlass().setBlockName("CosmicGlass").setCreativeTab(Wenis.Infinidark);
+    	
+    	//Define Items
+    	DarkMatter = new Item().setUnlocalizedName("DarkMatter").setCreativeTab(Wenis.Infinidark).setTextureName("wenis:DarkMatter");
+    	InfinityMatter = new Item().setUnlocalizedName("InfinityMatter").setCreativeTab(Wenis.Infinidark).setTextureName("wenis:InfinityMatter");
+    	DarkEnergy = new Item().setUnlocalizedName("DarkEnergy").setCreativeTab(Wenis.Infinidark).setTextureName("wenis:DarkEnergy");
+    	InfinityEnergy = new Item().setUnlocalizedName("InfinityEnergy").setCreativeTab(Wenis.Infinidark).setTextureName("wenis:InfinityEnergy");
+    	UnstableIsotope = new Item().setUnlocalizedName("UnstableIsotope").setCreativeTab(Wenis.Infinidark).setTextureName("wenis:UnstableIsotope");
+    	SemistableIsotope = new Item().setUnlocalizedName("SemistableIsotope").setCreativeTab(Wenis.Infinidark).setTextureName("wenis:SemistableIsotope");
+    	UnstableEnergy = new Item().setUnlocalizedName("UnstableEnergy").setCreativeTab(Wenis.Infinidark).setTextureName("wenis:UnstableEnergy");
+    	SemistableEnergy = new Item().setUnlocalizedName("SemistableEnergy").setCreativeTab(Wenis.Infinidark).setTextureName("wenis:SemistableEnergy");
+    	
+    	ArchaicStone = new Item().setUnlocalizedName("ArchaicStone").setCreativeTab(Wenis.Infinidark).setTextureName("wenis:ArchaicStone").setMaxStackSize(16).setMaxDamage(16).setNoRepair();
+    	MatterJar = new Item().setUnlocalizedName("MatterJar").setCreativeTab(Wenis.Infinidark).setTextureName("wenis:MatterJar").setMaxStackSize(1).setMaxDamage(32).setNoRepair();
+    	
+    	//Register Items
+    	GameRegistry.registerItem(DarkEnergy, "DarkEnergy");
+    	GameRegistry.registerItem(DarkMatter, "DarkMatter");
+    	GameRegistry.registerItem(InfinityEnergy, "InfinityEnergy");
+    	GameRegistry.registerItem(InfinityMatter, "InfinityMatter");
+    	GameRegistry.registerItem(UnstableIsotope, "UnstableIsotope");
+    	GameRegistry.registerItem(SemistableIsotope, "SemistableIsotope");
+    	GameRegistry.registerItem(UnstableEnergy, "UnstableEnergy");
+    	GameRegistry.registerItem(SemistableEnergy, "SemistableEnergy");
+    	
+    	GameRegistry.registerItem(ArchaicStone, "ArchaicStone");
+    	GameRegistry.registerItem(MatterJar, "MatterJar");
+    	
+    	//Register Blocks
+    	GameRegistry.registerBlock(CosmicGlass, "CosmicGlass");
+    	
+    	//machine
+    	processor = new processor(true).setBlockName("processor").setCreativeTab(Wenis.Infinidark);
+    	processorIdle = new processorIdle(false).setBlockName("processorIdle").setLightLevel(0.625f).setCreativeTab(Wenis.Infinidark);
+    	GameRegistry.registerBlock(processor, "processor");
+    	GameRegistry.registerBlock(processorIdle, "processorIdle");
+    	
+    	//recipes
+    	GameRegistry.addRecipe(new ItemStack(Wenis.ArchaicStone), new Object[]{
+            "DGD",
+            "GBG",
+            "DGD",
+            'D', Blocks.stone, 'G', Wenis.DarkEnergy, 'B', Items.iron_ingot
+    	});
+    	
+    	GameRegistry.addRecipe(new ItemStack(Wenis.SemistableIsotope), new Object[]{
+            "DGD",
+            "GBG",
+            "DGD",
+            'D', Items.diamond, 'B', Items.golden_apple, 'G', Blocks.iron_block
+    	});
+    	GameRegistry.addRecipe(new ItemStack(Wenis.SemistableEnergy), new Object[]{
+            "DGD",
+            "GBG",
+            "DGD",
+            'D', Items.blaze_rod, 'B', Items.lava_bucket, 'G', Blocks.coal_block
+    	});
+    	GameRegistry.addRecipe(new ItemStack(Wenis.MatterJar), new Object[]{
+            "PPP",
+            "J J",
+            "JJJ",
+            'P', Wenis.DarkMatter, 'J', Wenis.CosmicGlass
+    	});	
+    	GameRegistry.addRecipe(new ItemStack(Wenis.CosmicGlass, 5), new Object[]{
+            "PPP",
+            "PEP",
+            "PPP",
+            'P', Blocks.glass, 'E', Wenis.DarkMatter
+    	});	
+    	GameRegistry.addRecipe(new ItemStack(Wenis.UnstableIsotope, 2), new Object[]{
+            "EP",
+            "PE",
+            'P', Wenis.SemistableEnergy, 'E', Wenis.SemistableIsotope
+    	});	
+    	GameRegistry.addRecipe(new ItemStack(Wenis.UnstableEnergy, 2), new Object[]{
+            "PE",
+            "EP",
+            'P', Wenis.SemistableEnergy, 'E', Wenis.SemistableIsotope
+    	});	
+
+    	//Furnace Recipes
+    	
+    	GameRegistry.addSmelting(SemistableIsotope, new ItemStack(DarkMatter), 15f);
+    	GameRegistry.addSmelting(SemistableEnergy, new ItemStack(DarkEnergy), 15f);
+    	GameRegistry.addSmelting(UnstableEnergy, new ItemStack(InfinityEnergy), 25f);
+    	GameRegistry.addSmelting(UnstableIsotope, new ItemStack(InfinityMatter), 25f);
+    	
+    	//register dark energy as fuel
+    	
+    	GameRegistry.registerFuelHandler(new com.example.wenis.items.DarkEnergy());
+    	GameRegistry.registerFuelHandler(new com.example.wenis.items.InfinityEnergy());
+    }
+
+    public void Init(FMLInitializationEvent event){
+    	GameRegistry.registerTileEntity(TileEntityprocessor.class, "processor");
+    	NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
+    }
+
+    
+}

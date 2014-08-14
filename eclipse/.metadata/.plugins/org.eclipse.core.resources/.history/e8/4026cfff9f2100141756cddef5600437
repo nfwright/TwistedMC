@@ -1,0 +1,7 @@
+package com.example.wenis.tileentity;
+
+import net.minecraft.tileentity.TileEntity;
+
+public class TileEntityprocessor extends TileEntity{
+
+}

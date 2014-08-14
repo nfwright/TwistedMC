@@ -1,0 +1,94 @@
+package com.example.wenis;
+
+import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
+@Mod(modid = Wenis.MODID, version = Wenis.VERSION)
+public class Wenis
+{	
+	
+	/** 
+	*Todo
+	*
+	*Photon Saber
+	*
+	*Neutrino Bow
+	*
+	*Dark Energy = Furnace Fuel
+	*
+	*Dark Matter = Tools?
+	*
+	*(figure out a machine)
+	*/
+	
+	//Prelude to the masterpiece
+    public static final String MODID = "wenis";
+    public static final String VERSION = "0.2";
+    
+    //CreativeTabs
+    public static CreativeTabs Infinidark = new CreativeTabs("Infinidark"){
+		@Override
+		@SideOnly(Side.CLIENT)
+		public Item getTabIconItem() {
+			return Items.diamond_hoe;
+		}
+    };
+    
+    //items
+    public static Item DarkMatter;
+    public static Item DarkEnergy;
+    public static Item InfinityMatter;
+    public static Item InfinityEnergy;
+    public static Item SemistableIsotope;
+    public static Item SemistableEnergy;
+    public static Item UnstableIsotope;
+    public static Item UnstableEnergy;
+    
+    //blocks
+    
+    
+    @EventHandler
+    public void preInit(FMLPreInitializationEvent event)
+    {
+    	//compCobble = new BlockCompCobble().setBlockName("compCobble").setCreativeTab(CreativeTabs.tabBlock);
+    	//RegisterHelper.registerBlock(compCobble);
+    	
+    	//Define Items
+    	DarkMatter = new Item().setUnlocalizedName("DarkMatter").setCreativeTab(CreativeTabs.tabRedstone).setTextureName("wenis:DarkMatter");
+    	InfinityMatter = new Item().setUnlocalizedName("InfinityMatter").setCreativeTab(CreativeTabs.tabRedstone).setTextureName("wenis:InfinityMatter");
+    	DarkEnergy = new Item().setUnlocalizedName("DarkEnergy").setCreativeTab(CreativeTabs.tabRedstone).setTextureName("wenis:DarkEnergy");
+    	InfinityEnergy = new Item().setUnlocalizedName("InfinityEnergy").setCreativeTab(CreativeTabs.tabRedstone).setTextureName("wenis:InfinityEnergy");
+    	
+    	//Register Items
+    	
+    	GameRegistry.registerItem(DarkEnergy, "DarkEnergy");
+    	GameRegistry.registerItem(DarkMatter, "DarkMatter");
+    	GameRegistry.registerItem(InfinityEnergy, "InfinityEnergy");
+    	GameRegistry.registerItem(InfinityMatter, "InfinityMatter");
+    	
+    	//recipes
+    	
+    	GameRegistry.addRecipe(new ItemStack(Wenis.SemistableIsotope), new Object[]{
+            "DGD",
+            "GBG",
+            "DGD",
+            'D', Blocks.diamond_block, 'B', new ItemStack(Items.golden_apple, 1, 1), 'G', Blocks.gold_block
+    });
+    	
+    	//register dark energy as fuel
+    	
+    	GameRegistry.registerFuelHandler(new DarkEnergy());
+    	GameRegistry.registerFuelHandler(new InfinityEnergy());
+    }
+}

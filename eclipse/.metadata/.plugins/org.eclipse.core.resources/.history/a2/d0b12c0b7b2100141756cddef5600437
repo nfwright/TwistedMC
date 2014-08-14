@@ -1,0 +1,14 @@
+package com.example.wenis;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+
+public class BlockCrate extends Block{
+
+	public BlockCrate(){
+		super(Material.wood);
+		setBlockName("crate");
+		setBlockTextureName("wenis:crate");
+		setHardness(5f);
+	}
+}

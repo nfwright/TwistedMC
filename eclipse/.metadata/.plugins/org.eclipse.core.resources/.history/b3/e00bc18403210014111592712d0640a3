@@ -1,0 +1,31 @@
+package com.example.wenis;
+
+import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+
+@Mod(modid = Wenis.MODID, version = Wenis.VERSION)
+public class Wenis
+{
+    public static final String MODID = "wenis";
+    public static final String VERSION = "0.1";
+    
+    public static Block compCobble;
+    public static Block compHay;
+    
+    @EventHandler
+    public void preInit(FMLPreInitializationEvent event)
+    {
+    	
+    	compCobble = new BlockCompCobble().setBlockName("compCobble").setCreativeTab(CreativeTabs.tabBlock);
+    	RegisterHelper.registerBlock(compCobble);
+    	compHay = new BlockCompHay().setBlockName("compHay").setCreativeTab(CreativeTabs.tabBlock);
+    	RegisterHelper.registerBlock(compHay);
+    	
+    	
+    	
+    }
+}
